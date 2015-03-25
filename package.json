@@ -1,0 +1,23 @@
+{
+  "name": "gengojs-default-accept",
+  "version": "0.0.1",
+  "type":"accept",
+  "description": "The default accept plugin for gengojs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iwatakeshi/gengojs-accept.git"
+  },
+  "author": "iwatakeshi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iwatakeshi/gengojs-accept/issues"
+  },
+  "homepage": "https://github.com/iwatakeshi/gengojs-accept",
+  "dependencies": {
+    "gengojs-accept": "0.0.10"
+  }
+}

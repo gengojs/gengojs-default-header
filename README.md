@@ -11,5 +11,5 @@ Sounds awesome right? If you think about it, it's not your typical "Oh I'm stuck
 
 At the moment, I would love to have some help in creating an open standard API for communicating between plugins. If you would like to contribute, please join the conversation at [GitHub issues](https://github.com/iwatakeshi/gengojs/issues/16).
 
-__*__ The next version will also be able to support arbitrary frameworks due to it's architecture (for the lack of a better term). It will also be easy to create native wrappers for those frameworks. Also, because *gengojs-default-accept* is powered by *gengojs-accept*, it will be simple to extend or even create your own plugin for other frameworks. Check out the next gengo.js aka the core of gengo.js at the [Github page](https://github.com/iwatakeshi/gengojs-core/blob/master/index.js).
+__*__ The next version will also be able to support arbitrary frameworks due to it's architecture (for the lack of a better term). It will also be easy to create native wrappers for those frameworks. Also, because *gengojs-default-accept* is powered by *gengojs-accept*, it will be simple to extend or even create your own plugin for other frameworks if you feel like contributing to that module. Check out the next gengo.js aka the core of gengo.js at the [Github page](https://github.com/iwatakeshi/gengojs-core/blob/master/index.js).
 

@@ -1,7 +1,6 @@
 {
   "name": "gengojs-default-accept",
   "version": "0.0.1",
-  "type":"accept",
   "description": "The default accept plugin for gengojs",
   "main": "index.js",
   "scripts": {

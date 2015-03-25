@@ -5,7 +5,7 @@ This module is a "plugified" version of [gengojs-accept](https://github.com/iwat
 
 ##About gengojs
 
-gengojs **1.0.0** *will* be the successor of **0.3.63+** (since there maybe readme updates afterwards). This verion will be *completely* pluggable and pluggable as in replacing the parser, accept-header parser (aka accept), backends, localisation, and finally routers (where routers automatically route the data according to the path of the url etc). 
+gengojs **1.0.0** *will* be the successor of **0.3.63+** (since there maybe readme updates afterwards). This verion will be *completely* pluggable and pluggable as in replacing the **i18n parser**, **accept-header parser** (aka accept), **backends**, **localisation**, and finally **routers** (where routers automatically route the data according to the path of the url etc). 
 
 Sounds awesome right? If you think about it, it's not your typical "Oh I'm stuck with what I've got" i18n library, because this is a fully customizable library. 
 

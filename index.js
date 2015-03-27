@@ -1,14 +1,14 @@
 var accept = require('gengojs-accept');
 
-function ship(req, options) {
-  this.accept = accept(req, options);
-  return this.accept;
+function ship(req) {
+  this.header = accept(req, this.plugins._header.options);
 }
 
 module.exports = function(options) {
-  var register = ship;
-  register.package = require('./package');
-  register.package.type = 'accept';
-  register.options = options;
-  return register;
+  var pkg = require('./package');
+  pkg.type = 'accept';
+  return {
+    main:ship,
+    package:pkg
+  };
 }

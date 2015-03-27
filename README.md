@@ -5,7 +5,7 @@ This module is a "plugified" version of [gengojs-accept](https://github.com/iwat
 
 ##About gengo.js
 
-gengo.js **1.0.0** *will* be the successor of **0.3.63+** (since there maybe readme updates afterwards). This verion will be *completely* pluggable and pluggable as in replacing the **i18n parser**, **header parser**, **backends**, **localisation**, **routers** (where routers automatically route the data according to the path of the url etc), and even the **api** such as `__` or `__l`. 
+gengo.js **1.0.0** *will* be the successor of **0.3.63+** (since there maybe readme updates afterwards). This version will be *completely* pluggable and pluggable as in replacing the **i18n parser**, **header parser**, **backends**, **localisation**, **routers** (where routers automatically route the data according to the path of the url etc), **API handler** and even the **API** such as `__` or `__l`. 
 
 Sounds awesome right? If you think about it, it's not your typical "Oh I'm stuck with what I've got" i18n library, because this is a fully customizable library. 
 

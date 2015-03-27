@@ -1,4 +1,4 @@
-# gengojs-default-accept
+# gengojs-default-header
 The default accept plugin for gengo.js, the best i18n library for Express, Koa, Hapi.*
 
 This module is a "plugified" version of [gengojs-accept](https://github.com/iwatakeshi/gengojs-accept) for the upcoming [gengo.js](https://github.com/iwatakeshi/gengojs) **1.0.0**.

@@ -1,0 +1,35 @@
+{
+  "name": "gengojs-default-header",
+  "version": "0.0.1-beta.1",
+  "description": "The default header plugin for gengojs",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt && mocha --harmony ./tests/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iwatakeshi/gengojs-default-header.git"
+  },
+  "author": "iwatakeshi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iwatakeshi/gengojs-default-header/issues"
+  },
+  "homepage": "https://github.com/iwatakeshi/gengojs-default-header",
+  "dependencies": {
+    "gengojs-accept": "0.0.10"
+  },
+  "devDependencies": {
+    "chai": "^2.2.0",
+    "express": "^4.12.3",
+    "gengojs-core": "0.0.1-beta.2",
+    "gengojs-wrappify": "0.0.1",
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.11.1",
+    "hapi": "^8.4.0",
+    "koa": "^0.18.1",
+    "load-grunt-tasks": "^3.1.0",
+    "mocha": "^2.2.1",
+    "supertest": "^0.15.0"
+  }
+}

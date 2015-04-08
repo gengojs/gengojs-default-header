@@ -12,7 +12,8 @@
 
   // Define globals exposed by Node.js.
   "node": true,
-
+  // Define ES6
+  "esnext":true,
   /*
    * ENFORCING OPTIONS
    * =================
@@ -57,4 +58,3 @@
   // Suppress warnings about == null comparisons.
   "eqnull": true
 }
-

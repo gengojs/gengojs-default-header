@@ -68,10 +68,13 @@ exports['default'] = function () {
   pkg.type = 'header';
   return {
     main: function main(req) {
-      var options = this._header.options = _import2['default'].defaults(this._header.options, require('./defaults'));
+      var options = this.options.header;
       this.header = new Header(req, options).accept();
     },
-    'package': pkg
+    'package': _import2['default'].merge({
+      type: 'header'
+    }, require('./package')),
+    defaults: require('./defaults')
   };
 };
 

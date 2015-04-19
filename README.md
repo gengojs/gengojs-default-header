@@ -49,3 +49,34 @@ The default header parser is already included in gengojs so you should not have 
 	"default": "en-US"
 }
 ```
+## Internal API
+
+* `getLocale(locale:String)` returns the current locale.
+* `setLocale(locale:String)` sets and returns the locale.
+* `detectLocale()` detects and returns the requested locale.
+
+**Example**:
+
+```js
+// Context
+this.header.getLocale();
+```
+
+For more documentation, visit the [GitHub page](https://github.com/iwatakeshi/gengojs-accept).
+
+## Dependencies
+
+None
+
+## Debug
+
+Unix:
+
+```bash
+DEBUG=default-debug
+```
+Windows:
+
+```bash
+SET DEBUG=default-debug
+```

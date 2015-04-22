@@ -51,15 +51,20 @@ The default header parser is already included in gengojs so you should not have 
 ```
 ## Internal API
 
-* `getLocale(locale:String)` returns the current locale.
+* `getLocale()` returns the current locale.
 * `setLocale(locale:String)` sets and returns the locale.
 * `detectLocale()` detects and returns the requested locale.
 
 **Example**:
 
 ```js
-// Context
-this.header.getLocale();
+// Plugin ship
+function ship(){
+	// Context
+	this.header.getLocale();
+	this.header.setLocale('ja');
+	this.header.detectLocale();
+}
 ```
 
 For more documentation, visit the [GitHub page](https://github.com/iwatakeshi/gengojs-accept).
@@ -80,3 +85,10 @@ Windows:
 ```bash
 SET DEBUG=default-debug
 ```
+
+## Contribute
+
+Feel free to contribute or even fork the project. This plugin has been
+written in ES6 and can be seen under `lib/index.js`. 
+If you would like to contribute to the header parser, 
+visit [gengojs-accept's GitHub page](https://github.com/iwatakeshi/gengojs-accept).

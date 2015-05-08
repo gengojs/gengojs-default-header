@@ -1,10 +1,10 @@
 # gengojs-default-header
 
-The default accept plugin for gengo.js, the best i18n library for Express, Koa, Hapi.*
+The default accept plugin for gengo.js.
 
 [![Build Status](https://travis-ci.org/iwatakeshi/gengojs-default-header.svg?branch=master)](https://travis-ci.org/iwatakeshi/gengojs-default-header)
 
-This module is a "plugified" version of [gengojs-accept](https://github.com/iwatakeshi/gengojs-accept) for the upcoming [gengo.js](https://github.com/iwatakeshi/gengojs) **1.0.0**.
+This module is a plugified version of [gengojs-accept](https://github.com/iwatakeshi/gengojs-accept) for [gengo.js](https://github.com/iwatakeshi/gengojs).
 
 An example usage with options is:
 
@@ -14,7 +14,7 @@ var gengo = require('gengojs');
 var header = require('gengojs-default-header');
 
 /* In whatever framework you are using: */
- 
+
 // I'll use express for an example
 // but it shouldn't matter
 
@@ -27,7 +27,7 @@ app.use(gengo({
 	}
 },/*header()*/));
 ```
-The default header parser is already included in gengojs so you should not have to require it.
+The default header parser is already included in gengo.js so you should not have to require it.
 
 
 ##Options
@@ -67,7 +67,7 @@ function ship(){
 }
 ```
 
-For more documentation, visit the [GitHub page](https://github.com/iwatakeshi/gengojs-accept).
+For more documentation on gengojs-accept, visit the [GitHub page](https://github.com/iwatakeshi/gengojs-accept).
 
 ## Dependencies
 
@@ -89,6 +89,6 @@ SET DEBUG=default-debug
 ## Contribute
 
 Feel free to contribute or even fork the project. This plugin has been
-written in ES6 and can be seen under `lib/index.js`. 
-If you would like to contribute to the header parser, 
+written in ES6 and can be seen under `lib/index.js`.
+If you would like to contribute to the header parser,
 visit [gengojs-accept's GitHub page](https://github.com/iwatakeshi/gengojs-accept).

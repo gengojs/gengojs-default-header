@@ -1,26 +1,26 @@
 'use strict';
 
-var _interopRequireWildcard = function (obj) { return obj && obj.__esModule ? obj : { 'default': obj }; };
-
-var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } };
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
 
-var _accept2 = require('gengojs-accept');
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-var _accept3 = _interopRequireWildcard(_accept2);
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+var _gengojsAccept = require('gengojs-accept');
+
+var _gengojsAccept2 = _interopRequireDefault(_gengojsAccept);
 
 var _debug = require('debug');
 
-var _debug2 = _interopRequireWildcard(_debug);
+var _debug2 = _interopRequireDefault(_debug);
 
-var _import = require('lodash');
+var _lodash = require('lodash');
 
-var _import2 = _interopRequireWildcard(_import);
+var _lodash2 = _interopRequireDefault(_lodash);
 
 /* Header class*/
 
@@ -39,24 +39,14 @@ var Header = (function () {
 
   _createClass(Header, [{
     key: 'accept',
-    value: (function (_accept) {
-      function accept() {
-        return _accept.apply(this, arguments);
-      }
-
-      accept.toString = function () {
-        return _accept.toString();
-      };
-
-      return accept;
-    })(function () {
+    value: function accept() {
       // Set accept
-      var header = _accept3['default'](this.request, this.options);
+      var header = _gengojsAccept2['default'](this.request, this.options);
       // Debug
       _debug2['default']('default-header')('current:', header.getLocale());
       _debug2['default']('default-header')('detected:', header.detectLocale());
       return header;
-    })
+    }
   }]);
 
   return Header;
@@ -71,7 +61,7 @@ exports['default'] = function () {
       var options = this.options.header;
       this.header = new Header(req, options).accept();
     },
-    'package': _import2['default'].merge({
+    'package': _lodash2['default'].merge({
       type: 'header'
     }, require('./package')),
     defaults: require('./defaults')

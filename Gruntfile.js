@@ -23,4 +23,11 @@ module.exports = function(grunt) {
     'jshint',
     'babel'
   ]);
+
+  grunt.registerTask('dev', [
+    'jshint',
+    'babel',
+    'watch'
+  ]);
+
 };

@@ -1,14 +1,14 @@
 /*global describe, it*/
 var assert = require('chai').assert;
-var Core = require('gengojs-core');
+var core = require('gengojs-core');
 var header = require('../');
-var wrappify = require('gengojs-wrappify/harmony');
+var wrappify = require('gengojs-wrappify/es6');
 
 describe('Header', function() {
   'use strict';
   describe('load plugins', function() {
     it('should exist', function() {
-      var gengo = new Core({}, header());
+      var gengo = core({}, header());
       gengo.plugins.headers.forEach(function(plugin) {
         assert.isDefined(plugin);
         assert.strictEqual(plugin.package.type, 'header');
@@ -17,7 +17,7 @@ describe('Header', function() {
     });
   });
   describe('koa', function() {
-    var gengo = new Core({}, header());
+    var gengo = core({}, header());
     var koa = require('koa');
     var app = koa();
     app.use(wrappify(gengo).koa());
@@ -31,7 +31,7 @@ describe('Header', function() {
   });
 
   describe('express', function() {
-    var gengo = new Core({}, header());
+    var gengo = core({}, header());
     var express = require('express');
     var app = express();
     var request = require('supertest');
@@ -45,7 +45,7 @@ describe('Header', function() {
   });
 
   describe('hapi', function() {
-    var gengo = new Core({}, header());
+    var gengo = core({}, header());
     var hapi = require('hapi');
     var server = new hapi.Server();
     server.connection({

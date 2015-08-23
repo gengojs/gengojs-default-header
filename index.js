@@ -33,18 +33,18 @@ var Header = (function () {
     // Set options
     this.options = options;
     // Debug
-    _debug2['default']('default-header')('request exists:', !!request);
-    _debug2['default']('default-header')('options:', options);
+    (0, _debug2['default'])('default-header')('request exists:', !!request);
+    (0, _debug2['default'])('default-header')('options:', options);
   }
 
   _createClass(Header, [{
     key: 'accept',
     value: function accept() {
       // Set accept
-      var header = _gengojsAccept2['default'](this.request, this.options);
+      var header = (0, _gengojsAccept2['default'])(this.request, this.options);
       // Debug
-      _debug2['default']('default-header')('current:', header.getLocale());
-      _debug2['default']('default-header')('detected:', header.detectLocale());
+      (0, _debug2['default'])('default-header')('current:', header.getLocale());
+      (0, _debug2['default'])('default-header')('detected:', header.detectLocale());
       return header;
     }
   }]);

@@ -1,3 +1,8 @@
+/**
+ * gengojs-default-plugin
+ * A gengojs plugin for gengojs-accept
+ * http://iwatakeshi.github.io/gengojs-accept/index.html
+ */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -14,38 +19,198 @@ var _gengojsAccept = require('gengojs-accept');
 
 var _gengojsAccept2 = _interopRequireDefault(_gengojsAccept);
 
-var _debug = require('debug');
+var _gengojsDebug = require('gengojs-debug');
 
-var _debug2 = _interopRequireDefault(_debug);
+var _gengojsDebug2 = _interopRequireDefault(_gengojsDebug);
 
 var _lodash = require('lodash');
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-/* Header class*/
+/**
+ * @class Header
+ */
 
 var Header = (function () {
+  /**
+   * @constructor
+   * @param {object} request - The request object
+   * @param {object} options - The options object
+   */
+
   function Header(request, options) {
     _classCallCheck(this, Header);
 
-    // Set request
-    this.request = request;
-    // Set options
-    this.options = options;
     // Debug
-    (0, _debug2['default'])('default-header')('request exists:', !!request);
-    (0, _debug2['default'])('default-header')('options:', options);
+    (0, _gengojsDebug2['default'])('header', 'debug', 'class: ' + Header.name, 'process: constructor');
+    (0, _gengojsDebug2['default'])('header', 'info', 'class: ' + Header.name, 'request exists: ' + !!request);
+    (0, _gengojsDebug2['default'])('header', 'info', 'class: ' + Header.name, 'options exists: ' + (!!request && !_lodash2['default'].isEmpty(options)));
+    // Set Header
+    this.header = (0, _gengojsAccept2['default'])(this.request, this.options);
+    // Set Locale
+    this.locale = this.getLocale();
   }
 
+  /**
+   * Parses the Accept-Launguage from the header
+   * @param {object} [request] - The request object
+   * @returns {string} - The parsed Accept-Language
+   */
+
   _createClass(Header, [{
-    key: 'accept',
-    value: function accept() {
-      // Set accept
-      var header = (0, _gengojsAccept2['default'])(this.request, this.options);
-      // Debug
-      (0, _debug2['default'])('default-header')('current:', header.getLocale());
-      (0, _debug2['default'])('default-header')('detected:', header.detectLocale());
-      return header;
+    key: 'getAcceptLanguge',
+    value: function getAcceptLanguge() {
+      (0, _gengojsDebug2['default'])('header', 'debug', 'class: ' + Header.name, 'process: ' + this.getAcceptLanguge.name);
+
+      this.locale = this.header.getAcceptLanguage.apply(this.header, arguments);
+
+      (0, _gengojsDebug2['default'])('header', 'info', 'class: ' + Header.name, 'locale: ' + this.locale);
+    }
+
+    /**
+     * Returns the current locale
+     * @returns {string} - The current locale
+     */
+  }, {
+    key: 'getLocale',
+    value: function getLocale() {
+      (0, _gengojsDebug2['default'])('header', 'debug', 'class: ' + Header.name, 'process: ' + this.getLocale.name);
+
+      this.locale = this.header.getLocale.apply(this.header, arguments);
+
+      (0, _gengojsDebug2['default'])('header', 'info', 'class: ' + Header.name, 'locale: ' + this.locale);
+      return this.locale;
+    }
+
+    /**
+     * Sets the current locale
+     * @param {string} - The locale to override
+     * @returns {string} - The current locale
+     */
+  }, {
+    key: 'setLocale',
+    value: function setLocale() {
+      (0, _gengojsDebug2['default'])('header', 'debug', 'class: ' + Header.name, 'process: ' + this.setLocale.name);
+
+      this.locale = this.header.setLocale.apply(this.header, arguments);
+
+      (0, _gengojsDebug2['default'])('header', 'info', 'class: ' + Header.name, 'locale: ' + this.locale);
+      return this.locale;
+    }
+
+    /**
+     * Parses the Accept-Language from the header and extracts the locale
+     * @param {object} [request] - The request object
+     * @param {string} [fallback] - The locale to fallback
+     * @returns {string} - The parsed locale
+     */
+  }, {
+    key: 'getFromHeader',
+    value: function getFromHeader() {
+      (0, _gengojsDebug2['default'])('header', 'debug', 'class: ' + Header.name, 'process: ' + this.getFromHeader.name);
+
+      this.locale = this.header.getFromHeader.apply(this.header, arguments);
+
+      (0, _gengojsDebug2['default'])('header', 'info', 'class: ' + Header.name, 'locale: ' + this.locale);
+      return this.locale;
+    }
+
+    /**
+     * Parses the query string from the url and extracts the locale
+     * @param {object} key - The key of the query string
+     * @param {string} [fallback] - The locale to fallback
+     * @returns {string} - The parsed locale
+     */
+  }, {
+    key: 'getFromQuery',
+    value: function getFromQuery() {
+      (0, _gengojsDebug2['default'])('header', 'debug', 'class: ' + Header.name, 'process: ' + this.getFromQuery.name);
+
+      this.locale = this.header.getFromQuery.apply(this.header, arguments);
+
+      (0, _gengojsDebug2['default'])('header', 'info', 'class: ' + Header.name, 'locale: ' + this.locale);
+      return this.locale;
+    }
+
+    /**
+     * Parses the domain from the url and extracts the locale
+     * @param {string} [fallback] - The locale to fallback
+     * @returns {string} - The parsed locale
+     */
+  }, {
+    key: 'getFromDomain',
+    value: function getFromDomain() {
+      (0, _gengojsDebug2['default'])('header', 'debug', 'class: ' + Header.name, 'process: ' + this.getFromDomain.name);
+
+      this.locale = this.header.getFromDomain.apply(this.header, arguments);
+
+      (0, _gengojsDebug2['default'])('header', 'info', 'class: ' + Header.name, 'locale: ' + this.locale);
+      return this.locale;
+    }
+
+    /**
+     * Parses the sub-domain from the url and extracts the locale
+     * @param {string} [fallback] - The locale to fallback
+     * @returns {string} - The parsed locale
+     */
+  }, {
+    key: 'getFromSubDomain',
+    value: function getFromSubDomain() {
+      (0, _gengojsDebug2['default'])('header', 'debug', 'class: ' + Header.name, 'process: ' + this.getFromSubDomain.name);
+
+      this.locale = this.header.getFromSubDomain.apply(this.header, arguments);
+
+      (0, _gengojsDebug2['default'])('header', 'info', 'class: ' + Header.name, 'locale: ' + this.locale);
+      return this.locale;
+    }
+
+    /**
+     * Parses the cookie from the request object and extracts the locale
+     * @param {object} key - The key of the query string
+     * @param {string} [fallback] - The locale to fallback
+     * @returns {string} - The parsed locale
+     */
+  }, {
+    key: 'getFromCookie',
+    value: function getFromCookie() {
+      (0, _gengojsDebug2['default'])('header', 'debug', 'class: ' + Header.name, 'process: ' + this.getFromCookie.name);
+
+      this.locale = this.header.getFromCookie.apply(this.header, arguments);
+
+      (0, _gengojsDebug2['default'])('header', 'info', 'class: ' + Header.name, 'locale: ' + this.locale);
+      return this.locale;
+    }
+
+    /**
+     * Parses the url and extracts the locale
+     * @param {string} [fallback] - The locale to fallback
+     * @returns {string} - The parsed locale
+     */
+  }, {
+    key: 'getFromUrl',
+    value: function getFromUrl() {
+      (0, _gengojsDebug2['default'])('header', 'debug', 'class: ' + Header.name, 'process: ' + this.getFromUrl.name);
+
+      this.locale = this.header.getFromUrl.apply(this.header, arguments);
+
+      (0, _gengojsDebug2['default'])('header', 'info', 'class: ' + Header.name, 'locale: ' + this.locale);
+      return this.locale;
+    }
+
+    /**
+     * Detects the locale by using the 'detect' options.
+     * @param {string} [locale] - The locale to override
+     * @returns {string} - The detected locale
+     */
+  }, {
+    key: 'detectLocale',
+    value: function detectLocale() {
+      (0, _gengojsDebug2['default'])('header', 'debug', 'class: ' + Header.name, 'process: ' + this.detectLocale.name);
+
+      this.locale = this.header.detectLocale.apply(this.header, arguments);
+
+      (0, _gengojsDebug2['default'])('header', 'info', 'class: ' + Header.name, 'locale: ' + this.locale);
+      return this.locale;
     }
   }]);
 
@@ -54,12 +219,10 @@ var Header = (function () {
 
 exports['default'] = function () {
   'use strict';
-  var pkg = require('./package');
-  pkg.type = 'header';
   return {
     main: function main(req) {
       var options = this.options.header;
-      this.header = new Header(req, options).accept();
+      this.header = new Header(req, options);
     },
     'package': _lodash2['default'].merge({
       type: 'header'
@@ -69,3 +232,4 @@ exports['default'] = function () {
 };
 
 module.exports = exports['default'];
+//# sourceMappingURL=source maps/index.js.map

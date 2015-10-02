@@ -10,6 +10,11 @@
     "type": "git",
     "url": "https://github.com/gengojs/plugin-header.git"
   },
+  "keywords": [
+    "gengojs-plugin",
+    "header",
+    "accept-language"
+  ],
   "author": {
     "name": "iwatakeshi"
   },

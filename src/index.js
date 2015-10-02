@@ -27,6 +27,7 @@ var _lodash = require('lodash');
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
+var log = (0, _gengojsDebug2['default'])('header');
 /**
  * @class Header
  */
@@ -42,9 +43,9 @@ var Header = (function () {
     _classCallCheck(this, Header);
 
     // Debug
-    (0, _gengojsDebug2['default'])('header', 'debug', 'class: ' + Header.name, 'process: constructor');
-    (0, _gengojsDebug2['default'])('header', 'info', 'class: ' + Header.name, 'request exists: ' + !!request);
-    (0, _gengojsDebug2['default'])('header', 'info', 'class: ' + Header.name, 'options exists: ' + (!!request && !_lodash2['default'].isEmpty(options)));
+    log.debug('header', 'debug', 'class: ' + Header.name, 'process: constructor');
+    log.debug('class: ' + Header.name, 'request exists: ' + !!request);
+    log.info('options exists: ' + (!!request && !_lodash2['default'].isEmpty(options)));
     // Set Header
     this.header = (0, _gengojsAccept2['default'])(this.request, this.options);
     // Set Locale
@@ -60,11 +61,11 @@ var Header = (function () {
   _createClass(Header, [{
     key: 'getAcceptLanguge',
     value: function getAcceptLanguge() {
-      (0, _gengojsDebug2['default'])('header', 'debug', 'class: ' + Header.name, 'process: ' + this.getAcceptLanguge.name);
+      log.debug('class: ' + Header.name, 'process: ' + this.getAcceptLanguge.name);
 
       this.locale = this.header.getAcceptLanguage.apply(this.header, arguments);
 
-      (0, _gengojsDebug2['default'])('header', 'info', 'class: ' + Header.name, 'locale: ' + this.locale);
+      log.info('locale: ' + this.locale);
     }
 
     /**
@@ -74,11 +75,11 @@ var Header = (function () {
   }, {
     key: 'getLocale',
     value: function getLocale() {
-      (0, _gengojsDebug2['default'])('header', 'debug', 'class: ' + Header.name, 'process: ' + this.getLocale.name);
+      log.debug('class: ' + Header.name, 'process: ' + this.getLocale.name);
 
       this.locale = this.header.getLocale.apply(this.header, arguments);
 
-      (0, _gengojsDebug2['default'])('header', 'info', 'class: ' + Header.name, 'locale: ' + this.locale);
+      log.info('locale: ' + this.locale);
       return this.locale;
     }
 
@@ -90,11 +91,11 @@ var Header = (function () {
   }, {
     key: 'setLocale',
     value: function setLocale() {
-      (0, _gengojsDebug2['default'])('header', 'debug', 'class: ' + Header.name, 'process: ' + this.setLocale.name);
+      log.debug('class: ' + Header.name, 'process: ' + this.setLocale.name);
 
       this.locale = this.header.setLocale.apply(this.header, arguments);
 
-      (0, _gengojsDebug2['default'])('header', 'info', 'class: ' + Header.name, 'locale: ' + this.locale);
+      log.info('locale: ' + this.locale);
       return this.locale;
     }
 
@@ -107,11 +108,11 @@ var Header = (function () {
   }, {
     key: 'getFromHeader',
     value: function getFromHeader() {
-      (0, _gengojsDebug2['default'])('header', 'debug', 'class: ' + Header.name, 'process: ' + this.getFromHeader.name);
+      log.debug('class: ' + Header.name, 'process: ' + this.getFromHeader.name);
 
       this.locale = this.header.getFromHeader.apply(this.header, arguments);
 
-      (0, _gengojsDebug2['default'])('header', 'info', 'class: ' + Header.name, 'locale: ' + this.locale);
+      log.info('locale: ' + this.locale);
       return this.locale;
     }
 
@@ -124,11 +125,11 @@ var Header = (function () {
   }, {
     key: 'getFromQuery',
     value: function getFromQuery() {
-      (0, _gengojsDebug2['default'])('header', 'debug', 'class: ' + Header.name, 'process: ' + this.getFromQuery.name);
+      log.debug('class: ' + Header.name, 'process: ' + this.getFromQuery.name);
 
       this.locale = this.header.getFromQuery.apply(this.header, arguments);
 
-      (0, _gengojsDebug2['default'])('header', 'info', 'class: ' + Header.name, 'locale: ' + this.locale);
+      log.info('locale: ' + this.locale);
       return this.locale;
     }
 
@@ -140,11 +141,11 @@ var Header = (function () {
   }, {
     key: 'getFromDomain',
     value: function getFromDomain() {
-      (0, _gengojsDebug2['default'])('header', 'debug', 'class: ' + Header.name, 'process: ' + this.getFromDomain.name);
+      log.debug('class: ' + Header.name, 'process: ' + this.getFromDomain.name);
 
       this.locale = this.header.getFromDomain.apply(this.header, arguments);
 
-      (0, _gengojsDebug2['default'])('header', 'info', 'class: ' + Header.name, 'locale: ' + this.locale);
+      log.info('locale: ' + this.locale);
       return this.locale;
     }
 
@@ -156,11 +157,11 @@ var Header = (function () {
   }, {
     key: 'getFromSubDomain',
     value: function getFromSubDomain() {
-      (0, _gengojsDebug2['default'])('header', 'debug', 'class: ' + Header.name, 'process: ' + this.getFromSubDomain.name);
+      log.debug('class: ' + Header.name, 'process: ' + this.getFromSubDomain.name);
 
       this.locale = this.header.getFromSubDomain.apply(this.header, arguments);
 
-      (0, _gengojsDebug2['default'])('header', 'info', 'class: ' + Header.name, 'locale: ' + this.locale);
+      log.info('locale: ' + this.locale);
       return this.locale;
     }
 
@@ -173,11 +174,11 @@ var Header = (function () {
   }, {
     key: 'getFromCookie',
     value: function getFromCookie() {
-      (0, _gengojsDebug2['default'])('header', 'debug', 'class: ' + Header.name, 'process: ' + this.getFromCookie.name);
+      log.debug('class: ' + Header.name, 'process: ' + this.getFromCookie.name);
 
       this.locale = this.header.getFromCookie.apply(this.header, arguments);
 
-      (0, _gengojsDebug2['default'])('header', 'info', 'class: ' + Header.name, 'locale: ' + this.locale);
+      log.info('locale: ' + this.locale);
       return this.locale;
     }
 
@@ -189,11 +190,11 @@ var Header = (function () {
   }, {
     key: 'getFromUrl',
     value: function getFromUrl() {
-      (0, _gengojsDebug2['default'])('header', 'debug', 'class: ' + Header.name, 'process: ' + this.getFromUrl.name);
+      log.debug('class: ' + Header.name, 'process: ' + this.getFromUrl.name);
 
       this.locale = this.header.getFromUrl.apply(this.header, arguments);
 
-      (0, _gengojsDebug2['default'])('header', 'info', 'class: ' + Header.name, 'locale: ' + this.locale);
+      log.info('locale: ' + this.locale);
       return this.locale;
     }
 
@@ -205,11 +206,11 @@ var Header = (function () {
   }, {
     key: 'detectLocale',
     value: function detectLocale() {
-      (0, _gengojsDebug2['default'])('header', 'debug', 'class: ' + Header.name, 'process: ' + this.detectLocale.name);
+      log.debug('class: ' + Header.name, 'process: ' + this.detectLocale.name);
 
       this.locale = this.header.detectLocale.apply(this.header, arguments);
 
-      (0, _gengojsDebug2['default'])('header', 'info', 'class: ' + Header.name, 'locale: ' + this.locale);
+      log.info('locale: ' + this.locale);
       return this.locale;
     }
   }]);
@@ -226,8 +227,8 @@ exports['default'] = function () {
     },
     'package': _lodash2['default'].merge({
       type: 'header'
-    }, require('./package')),
-    defaults: require('./defaults')
+    }, require('../package')),
+    defaults: require('../defaults')
   };
 };
 

@@ -1,7 +1,7 @@
 /*global describe, it*/
 var assert = require('chai').assert;
 var core = require('gengojs-core');
-var header = require('../../');
+var header = require('../../src/');
 var wrappify = require('gengojs-wrappify/es6');
 require('babel/polyfill');
 

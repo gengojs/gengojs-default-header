@@ -32,6 +32,33 @@
 <p>This module is a plugified version of <a href="https://github.com/iwatakeshi/gengojs-accept">gengojs-accept</a> for <a href="https://github.com/iwatakeshi/gengojs">gengo.js</a>.</p>
 <h2>Documentation</h2>
 <p>See <a href="https://gengojs.github.io/plugin-header">documentation</a>.</p>
+<h2>Internal API</h2>
+<ul>
+<li><code>getLocale(locale:String)</code>
+<ul>
+<li>Should return a string of the current locale.</li>
+</ul>
+</li>
+<li><code>setLocale(locale:String)</code>
+<ul>
+<li>Should set the locale.</li>
+</ul>
+</li>
+<li><code>detectLocale(locale:String)</code>
+<ul>
+<li>Should detect the current locale by parsing the
+Accept-Language, domains, sub-domains, queries, URLs, and cookies.</li>
+</ul>
+</li>
+<li><code>supported:Array</code> from options
+<ul>
+<li>Should be an array of supported locales.</li>
+</ul>
+</li>
+</ul>
+<p>For more see <a href="https://gengojs.github.io/plugin-header">documentation</a></p>
+<h2>Dependencies</h2>
+<p>Not Applicable</p>
 <h2>Debug</h2>
 <p>See <a href="https://www.github.com/iwatakeshi/gengojs-debug">gengojs-debug</a></p>
 <h2>Contribute</h2>

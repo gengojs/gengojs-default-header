@@ -2,7 +2,7 @@
 
 The default accept plugin for gengo.js.
 
-[![Build Status](https://travis-ci.org/iwatakeshi/gengojs-default-header.svg?branch=master)](https://travis-ci.org/iwatakeshi/gengojs-default-header)
+[![Build Status](https://travis-ci.org/gengojs/plugin-header.svg?branch=master)](https://travis-ci.org/gengojs/plugin-header)
 
 This module is a plugified version of [gengojs-accept](https://github.com/iwatakeshi/gengojs-accept) for [gengo.js](https://github.com/iwatakeshi/gengojs).
 

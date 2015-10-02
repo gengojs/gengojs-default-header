@@ -6,6 +6,9 @@ The default accept plugin for gengo.js.
 
 This module is a plugified version of [gengojs-accept](https://github.com/iwatakeshi/gengojs-accept) for [gengo.js](https://github.com/iwatakeshi/gengojs).
 
+## Documentation
+
+See [documentation](https://gengojs.github.io/plugin-header).
 
 ## Debug
 

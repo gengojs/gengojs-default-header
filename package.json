@@ -24,7 +24,6 @@
   },
   "homepage": "https://github.com/gengojs/plugin-header",
   "dependencies": {
-    "babel": "^5.8.23",
     "gengojs-accept": "0.2.6",
     "gengojs-debug": "^2.0.4",
     "lodash": "^3.8.0"

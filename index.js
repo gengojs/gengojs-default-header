@@ -1,7 +1,6 @@
 /**
  * gengojs-default-plugin
- * A gengojs plugin for gengojs-accept
- * http://iwatakeshi.github.io/gengojs-accept/index.html
+ * A gengojs plugin for [gengojs-accept](http://gengojs.github.io/accept/index.html)
  */
 'use strict';
 

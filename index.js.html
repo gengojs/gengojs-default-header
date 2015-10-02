@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>gengo.js/core</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/cayman.css">
+    <link rel="stylesheet" href="css/prism.css">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">gengo.js/core</h1>
+      <h2 class="project-tagline">The default header plugin for gengojs</h2><a href="https://github.com/gengojs/plugin-header" target="_blank" class="btn">View on GitHub</a><a href="https://npmjs.com/package/gengojs-default-header" target="_blank" class="btn">View on npm</a>
+    </section>
+    <section data-spy="scroll" data-target=".scrollspy" class="main-content">
+      <div class="row">
+        <div class="col-md-3 col-xs-3 bs-docs-sidebar">
+          <ul id="sidebar" class="nav nav-stacked fixed">
+            <li><a href="index.html">Main</a></li>
+            <li class="active"><a href="index.js.html">index.js
+                <ul class="nav nav-stacked">
+                  <li><a href="#Header"><i class="alert alert-success"></i><span>Header</span></a>
+                  </li>
+                  <li><a href="#constructor"><i class="alert alert-success"></i><span>constructor</span></a>
+                  </li>
+                  <li><a href="#getAcceptLanguge"><i class="alert alert-info"></i><span>getAcceptLanguge</span></a>
+                  </li>
+                  <li><a href="#getLocale"><i class="alert alert-info"></i><span>getLocale</span></a>
+                  </li>
+                  <li><a href="#setLocale"><i class="alert alert-info"></i><span>setLocale</span></a>
+                  </li>
+                  <li><a href="#getFromHeader"><i class="alert alert-info"></i><span>getFromHeader</span></a>
+                  </li>
+                  <li><a href="#getFromQuery"><i class="alert alert-info"></i><span>getFromQuery</span></a>
+                  </li>
+                  <li><a href="#getFromDomain"><i class="alert alert-info"></i><span>getFromDomain</span></a>
+                  </li>
+                  <li><a href="#getFromSubDomain"><i class="alert alert-info"></i><span>getFromSubDomain</span></a>
+                  </li>
+                  <li><a href="#getFromCookie"><i class="alert alert-info"></i><span>getFromCookie</span></a>
+                  </li>
+                  <li><a href="#getFromUrl"><i class="alert alert-info"></i><span>getFromUrl</span></a>
+                  </li>
+                  <li><a href="#detectLocale"><i class="alert alert-info"></i><span>detectLocale</span></a>
+                  </li>
+                </ul></a></li>
+          </ul>
+        </div>
+        <div class="col-md-9">
+          <div class="description"><p>gengojs-default-plugin<br />A gengojs plugin for gengojs-accept<br /><a href="http://iwatakeshi.github.io/gengojs-accept/index.html">http://iwatakeshi.github.io/gengojs-accept/index.html</a></p></div>
+          <pre><code class="language-javascript">import accept from 'gengojs-accept';
+import debug from 'gengojs-debug';
+import _ from 'lodash';
+var log = debug('header');</code></pre>
+          <section id="Header">
+            <h1>Header</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-success radius ctx-type">class</div><span>&nbsp;</span><span>new Header()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <div class="description"></div>
+          <pre><code class="language-javascript">class Header {</code></pre>
+          <section id="constructor">
+            <h1>constructor</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-success radius ctx-type">constructor</div><span>&nbsp;</span><span>Header.prototype.constructor()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>request</td>
+                <td>object</td>
+                <td><ul>
+<li>The request object</li>
+</ul>
+</td>
+              </tr>
+              <tr>
+                <td>options</td>
+                <td>object</td>
+                <td><ul>
+<li>The options object</li>
+</ul>
+</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"></div>
+          <pre><code class="language-javascript">constructor(request, options) {
+    // Debug
+    log.debug('header', 'debug',
+      `class: ${Header.name}`, 'process: constructor');
+    log.debug(`class: ${Header.name}`, `request exists: ${ !(!request) }`);
+    log.info(`options exists: ${!(!request) &amp;&amp; !_.isEmpty(options) }`);
+    // Set Header
+    this.header = accept(this.request, this.options);
+    // Set Locale
+    this.locale = this.getLocale();
+  }</code></pre>
+          <section id="getAcceptLanguge">
+            <h1>getAcceptLanguge</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>Header.prototype.getAcceptLanguge()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>[request]</td>
+                <td>object</td>
+                <td><ul>
+<li>The request object</li>
+</ul>
+</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Parses the Accept-Launguage from the header</p></div>
+          <pre><code class="language-javascript">getAcceptLanguge() {
+    log.debug(`class: ${Header.name}`,
+      `process: ${this.getAcceptLanguge.name}`);
+
+    this.locale = this.header
+      .getAcceptLanguage
+      .apply(this.header, arguments);
+
+    log.info(`locale: ${this.locale}`);
+  }</code></pre>
+          <section id="getLocale">
+            <h1>getLocale</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>Header.prototype.getLocale()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <div class="description"><p>Returns the current locale</p></div>
+          <pre><code class="language-javascript">getLocale() {
+    log.debug(`class: ${Header.name}`,
+      `process: ${this.getLocale.name}`);
+
+    this.locale = this.header
+      .getLocale
+      .apply(this.header, arguments);
+
+    log.info(`locale: ${this.locale}`);
+    return this.locale;
+  }</code></pre>
+          <section id="setLocale">
+            <h1>setLocale</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>Header.prototype.setLocale()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>-</td>
+                <td>string</td>
+                <td><p>The locale to override</p></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Sets the current locale</p></div>
+          <pre><code class="language-javascript">setLocale() {
+    log.debug(`class: ${Header.name}`,
+      `process: ${this.setLocale.name}`);
+
+    this.locale = this.header
+      .setLocale
+      .apply(this.header, arguments);
+
+    log.info(`locale: ${this.locale}`);
+    return this.locale;
+  }</code></pre>
+          <section id="getFromHeader">
+            <h1>getFromHeader</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>Header.prototype.getFromHeader()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>[request]</td>
+                <td>object</td>
+                <td><ul>
+<li>The request object</li>
+</ul>
+</td>
+              </tr>
+              <tr>
+                <td>[fallback]</td>
+                <td>string</td>
+                <td><ul>
+<li>The locale to fallback</li>
+</ul>
+</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Parses the Accept-Language from the header and extracts the locale</p></div>
+          <pre><code class="language-javascript">getFromHeader() {
+    log.debug(`class: ${Header.name}`,
+      `process: ${this.getFromHeader.name}`);
+
+    this.locale = this.header
+      .getFromHeader
+      .apply(this.header, arguments);
+
+    log.info(`locale: ${this.locale}`);
+    return this.locale;
+  }</code></pre>
+          <section id="getFromQuery">
+            <h1>getFromQuery</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>Header.prototype.getFromQuery()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>key</td>
+                <td>object</td>
+                <td><ul>
+<li>The key of the query string</li>
+</ul>
+</td>
+              </tr>
+              <tr>
+                <td>[fallback]</td>
+                <td>string</td>
+                <td><ul>
+<li>The locale to fallback</li>
+</ul>
+</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Parses the query string from the url and extracts the locale</p></div>
+          <pre><code class="language-javascript">getFromQuery() {
+    log.debug(`class: ${Header.name}`,
+      `process: ${this.getFromQuery.name}`);
+
+    this.locale = this.header
+      .getFromQuery
+      .apply(this.header, arguments);
+
+    log.info(`locale: ${this.locale}`);
+    return this.locale;
+  }</code></pre>
+          <section id="getFromDomain">
+            <h1>getFromDomain</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>Header.prototype.getFromDomain()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>[fallback]</td>
+                <td>string</td>
+                <td><ul>
+<li>The locale to fallback</li>
+</ul>
+</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Parses the domain from the url and extracts the locale</p></div>
+          <pre><code class="language-javascript">getFromDomain() {
+    log.debug(`class: ${Header.name}`,
+      `process: ${this.getFromDomain.name}`);
+
+    this.locale = this.header
+      .getFromDomain
+      .apply(this.header, arguments);
+
+    log.info(`locale: ${this.locale}`);
+    return this.locale;
+  }</code></pre>
+          <section id="getFromSubDomain">
+            <h1>getFromSubDomain</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>Header.prototype.getFromSubDomain()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>[fallback]</td>
+                <td>string</td>
+                <td><ul>
+<li>The locale to fallback</li>
+</ul>
+</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Parses the sub-domain from the url and extracts the locale</p></div>
+          <pre><code class="language-javascript">getFromSubDomain() {
+    log.debug(`class: ${Header.name}`,
+      `process: ${this.getFromSubDomain.name}`);
+
+    this.locale = this.header
+      .getFromSubDomain
+      .apply(this.header, arguments);
+
+    log.info(`locale: ${this.locale}`);
+    return this.locale;
+  }</code></pre>
+          <section id="getFromCookie">
+            <h1>getFromCookie</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>Header.prototype.getFromCookie()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>key</td>
+                <td>object</td>
+                <td><ul>
+<li>The key of the query string</li>
+</ul>
+</td>
+              </tr>
+              <tr>
+                <td>[fallback]</td>
+                <td>string</td>
+                <td><ul>
+<li>The locale to fallback</li>
+</ul>
+</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Parses the cookie from the request object and extracts the locale</p></div>
+          <pre><code class="language-javascript">getFromCookie() {
+    log.debug(`class: ${Header.name}`,
+      `process: ${this.getFromCookie.name}`);
+
+    this.locale = this.header
+      .getFromCookie
+      .apply(this.header, arguments);
+
+    log.info(`locale: ${this.locale}`);
+    return this.locale;
+  }</code></pre>
+          <section id="getFromUrl">
+            <h1>getFromUrl</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>Header.prototype.getFromUrl()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>[fallback]</td>
+                <td>string</td>
+                <td><ul>
+<li>The locale to fallback</li>
+</ul>
+</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Parses the url and extracts the locale</p></div>
+          <pre><code class="language-javascript">getFromUrl() {
+    log.debug(`class: ${Header.name}`,
+      `process: ${this.getFromUrl.name}`);
+
+    this.locale = this.header
+      .getFromUrl
+      .apply(this.header, arguments);
+
+    log.info(`locale: ${this.locale}`);
+    return this.locale;
+  }</code></pre>
+          <section id="detectLocale">
+            <h1>detectLocale</h1>
+            <h5 class="subheader"></h5>
+            <p>
+              <div class="label label-info radius ctx-type">method</div><span>&nbsp;</span><span>Header.prototype.detectLocale()</span><span>&nbsp;</span>
+            </p>
+          </section>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:20%">Option name</th>
+                <th style="width:20%">Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>[locale]</td>
+                <td>string</td>
+                <td><ul>
+<li>The locale to override</li>
+</ul>
+</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="description"><p>Detects the locale by using the &#39;detect&#39; options.</p></div>
+          <pre><code class="language-javascript">detectLocale() {
+  log.debug(`class: ${Header.name}`,
+    `process: ${this.detectLocale.name}`);
+
+  this.locale = this.header
+    .detectLocale
+    .apply(this.header, arguments);
+
+  log.info(`locale: ${this.locale}`);
+  return this.locale;
+}
+
+}
+
+export default () =&gt; {
+'use strict';
+return {
+  main: function(req) {
+    var options = this.options.header;
+    this.header = new Header(req, options);
+  },
+  package: _.merge({
+    type: 'header'
+  }, require('../package')),
+  defaults: require('../defaults')
+};
+};</code></pre>
+          <div class="footer site-footer">
+            <div class="span site-footer-owner"><a href="https://github.com/mr-doc/mr-doc-theme-cayman">Cayman</a> is maintained by <a href="https://github.com/iwatakeshi">iwatakeshi</a>.</div>
+            <div class="span site-footer-credits">This page was generated by <a href="https://github.com/mr-doc/mr-doc">Mr. Doc</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/affix.js"></script>
+    <script src="js/dropdown.js"></script>
+    <script src="js/scrollspy.js"></script>
+    <script src="js/prism.js"></script>
+    <script src="js/prism-bash.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('body').scrollspy({
+          target: ".bs-docs-sidebar",
+          offset: 40
+        });
+        $('#sidebar').affix({
+          offset:{
+            bottom:60,
+            top: 60
+          }
+        }) 
+      });
+    </script>
+  </body>
+</html>

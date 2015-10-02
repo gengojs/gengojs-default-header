@@ -1,19 +1,19 @@
 /* Dev-Dependencies */
 var
-  gulp = require('gulp'),
-  sourcemaps = require('gulp-sourcemaps'),
-  babel = require('gulp-babel'),
-  mocha = require('gulp-mocha'),
-  jshint = require('gulp-jshint'),
-  beautify = require('gulp-jsbeautify'),
-  shell = require('gulp-shell'),
-  ghPages = require('gulp-gh-pages'),
-  rimraf = require('rimraf'),
-  config = require('./config'),
-  changelog = require('gulp-changelog'),
-  semver = require('semver'),
-  version = require('node-version').long,
-  isHarmony = !semver.lt(version.toString(), '0.11.0');
+  gulp        = require('gulp'),
+  sourcemaps  = require('gulp-sourcemaps'),
+  babel       = require('gulp-babel'),
+  mocha       = require('gulp-mocha'),
+  jshint      = require('gulp-jshint'),
+  beautify    = require('gulp-jsbeautify'),
+  shell       = require('gulp-shell'),
+  ghPages     = require('gulp-gh-pages'),
+  rimraf      = require('rimraf'),
+  config      = require('./config'),
+  changelog   = require('gulp-changelog'),
+  semver      = require('semver'),
+  version     = require('node-version').long,
+  isHarmony   = !semver.lt(version.toString(), '0.11.0');
 
 if (!isHarmony) {
   require("harmonize")(["harmony-generators"]);
@@ -74,11 +74,9 @@ gulp.task('watch', function () {
 
 /* Runs tests */
 
-gulp.task('test', ['lib'], function () {
+gulp.task('mocha', ['lib'], function () {
   return gulp.src('./tests/**/*.js')
-    .pipe(mocha()).on('end',function(){
-      process.exit();
-    });
+    .pipe(mocha());
 });
 
 gulp.task('changelog', function (cb) {
@@ -97,7 +95,7 @@ gulp.task('doc', ['build'], shell.task([
       cmd = {
         source: ' -s lib/',
         output: ' -o docs/',
-        name: ' -n "gengo.js/core"',
+        name: ' -n "gengo.js/plugin/header"',
         theme: ' -t cayman'
       };
     return doc + cmd.source + cmd.output + cmd.name + cmd.theme;
@@ -111,8 +109,19 @@ gulp.task('clean:backup', function (cb) {
   rimraf('.backup/', cb);
 });
 
+function end (task){
+  return function(){
+    var isBuild = task ? task.indexOf('build') > -1 : false;
+    var isDocs = task ? task.indexOf('docs') > -1 : false;
+    if(!isBuild && !isDocs)
+      process.exit();
+  };
+}
+
 gulp.task('default', ['backup', 'beautify', 'lib', 'watch']);
 
-gulp.task('build', ['backup', 'beautify', 'lib', 'test']);
+gulp.task('build', ['backup', 'beautify', 'lib', 'mocha'], end('build'));
 
-gulp.task('docs', ['build', 'doc', 'gh-pages', 'clean:docs', 'clean:backup']);
+gulp.task('test', ['mocha'], end());
+
+gulp.task('docs', ['build', 'doc', 'gh-pages', 'clean:docs', 'clean:backup'], end('docs'));

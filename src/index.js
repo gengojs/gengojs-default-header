@@ -27,6 +27,8 @@ var _lodash = require('lodash');
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
+require('babel/polyfill');
+
 var log = (0, _gengojsDebug2['default'])('header');
 /**
  * @class Header

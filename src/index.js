@@ -1,7 +1,6 @@
 /**
  * gengojs-default-plugin
- * A gengojs plugin for gengojs-accept
- * http://iwatakeshi.github.io/gengojs-accept/index.html
+ * A gengojs plugin for [gengojs-accept](http://gengojs.github.io/accept/index.html)
  */
 'use strict';
 
@@ -26,8 +25,6 @@ var _gengojsDebug2 = _interopRequireDefault(_gengojsDebug);
 var _lodash = require('lodash');
 
 var _lodash2 = _interopRequireDefault(_lodash);
-
-require('babel/polyfill');
 
 var log = (0, _gengojsDebug2['default'])('header');
 /**

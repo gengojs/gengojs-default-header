@@ -42,13 +42,7 @@ var Header = (function () {
     _classCallCheck(this, Header);
 
     // Debug
-    log.debug('header', 'debug', 'class: ' + Header.name, 'process: constructor');
-    log.debug('class: ' + Header.name, 'request exists: ' + !!request);
-    log.info('options exists: ' + (!!request && !_lodash2['default'].isEmpty(options)));
-    // Set Header
-    this.header = (0, _gengojsAccept2['default'])(this.request, this.options);
-    // Set Locale
-    this.locale = this.getLocale();
+    log.debug('header', 'debug', 'class: ' + Header.name, 'process: constructor').debug('request exists: ' + !!request).debug('options exists: ' + !!options).debug('gengojs-accept exists: ' + !!(this.header = (0, _gengojsAccept2['default'])(request, options))).debug('locale: ' + (this.locale = this.header.getLocale()));
   }
 
   /**
@@ -65,6 +59,7 @@ var Header = (function () {
       this.locale = this.header.getAcceptLanguage.apply(this.header, arguments);
 
       log.info('locale: ' + this.locale);
+      return this.locale;
     }
 
     /**

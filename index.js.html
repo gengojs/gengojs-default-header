@@ -102,13 +102,16 @@ var log = debug('header');</code></pre>
           <pre><code class="language-javascript">constructor(request, options) {
     // Debug
     log.debug('header', 'debug',
-      `class: ${Header.name}`, 'process: constructor');
-    log.debug(`class: ${Header.name}`, `request exists: ${ !(!request) }`);
-    log.info(`options exists: ${!(!request) &amp;&amp; !_.isEmpty(options) }`);
-    // Set Header
-    this.header = accept(this.request, this.options);
-    // Set Locale
-    this.locale = this.getLocale();
+        `class: ${Header.name}`, 'process: constructor')
+      .debug(`request exists: ${!!request}`)
+      .debug(`options exists: ${!!options}`)
+      .debug(
+        `gengojs-accept exists: ${
+        !!(this.header = accept(request, options))
+      }`)
+      .debug(`locale: ${
+        (this.locale = this.header.getLocale())
+      }`);
   }</code></pre>
           <section id="getAcceptLanguge">
             <h1>getAcceptLanguge</h1>
@@ -146,6 +149,7 @@ var log = debug('header');</code></pre>
       .apply(this.header, arguments);
 
     log.info(`locale: ${this.locale}`);
+    return this.locale;
   }</code></pre>
           <section id="getLocale">
             <h1>getLocale</h1>

@@ -30,8 +30,18 @@ Not Applicable
 
 ## Debug
 
+Unix:
 
-See [gengojs-debug](https://www.github.com/iwatakeshi/gengojs-debug)
+```bash
+DEBUG=gengo.header
+```
+Windows:
+
+```bash
+SET DEBUG=gengo.header
+```
+
+See [gengojs-debug](https://github.com/gengojs/gengojs-debug) for usage.
 
 ## Contribute
 
